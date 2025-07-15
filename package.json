@@ -1,7 +1,7 @@
 {
     "name": "CuteCat-Launcher",
     "preductname": "CuteCat Launcher",
-    "version": "Bêta0.0.1",
+    "version": "0.0.1",
     "description": "CuteCat-Launcher le launcher Minecraft Cute, minimaliste, efficace et basé sur vos idées.",
     "main": "src/app.js",
     "author": {

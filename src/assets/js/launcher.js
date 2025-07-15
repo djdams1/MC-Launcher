@@ -142,10 +142,10 @@ class Launcher {
                     continue
                 }
                 if (account.meta.type === 'Xbox') {
-                    console.log(`Account Type: ${account.meta.type} | Username: ${account.name}`);
+                    console.log(`Account Type: ${account.meta.type} | Pseudo: ${account.name}`);
                     popupRefresh.openPopup({
                         title: 'Connexion',
-                        content: `Refresh account Type: ${account.meta.type} | Username: ${account.name}`,
+                        content: `Refresh account Type: ${account.meta.type} | Pseudo: ${account.name}`,
                         color: 'var(--color)',
                         background: false
                     });
