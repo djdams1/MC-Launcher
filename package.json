@@ -1,7 +1,7 @@
 {
     "name": "CuteCat-Launcher",
     "preductname": "CuteCat Launcher",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "CuteCat-Launcher le launcher Minecraft Cute, minimaliste, efficace et basé sur vos idées.",
     "main": "src/app.js",
     "author": {
@@ -9,7 +9,7 @@
         "email": "dami.scoot3@gmail.com",
         "url": "https://github.com/djdams1"
     },
-    "url": "http://localhost/tes",
+    "url": "http://188.62.148.92:81/tes",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
