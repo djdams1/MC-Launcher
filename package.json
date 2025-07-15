@@ -1,13 +1,13 @@
 {
     "name": "CuteCat-Launcher",
     "preductname": "CuteCat Launcher",
-    "version": "2.1.1",
-    "description": "CuteCat-Launcher",
+    "version": "Bêta0.0.1",
+    "description": "CuteCat-Launcher le launcher Minecraft Cute, minimaliste, efficace et basé sur vos idées.",
     "main": "src/app.js",
     "author": {
-        "name": "luuxis, Inc.",
-        "email": "contact@luuxis.fr",
-        "url": "https://github.com/luuxis"
+        "name": "BlackAngel",
+        "email": "dami.scoot3@gmail.com",
+        "url": "https://github.com/djdams1"
     },
     "url": "http://localhost/tes",
     "scripts": {
