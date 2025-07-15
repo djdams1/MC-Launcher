@@ -32,8 +32,25 @@ class Splash {
         let splashes = [
             { "message": "Bah Bon jeu !", "author": "BlackAngel" },
             { "message": "Salut je suis le CuteCat Launcher.", "author": "BlackAngel" },
-            { "message": "Linux n'est pas un os, mais un kernel.", "author": "BlackAngel" }
-        ];
+            { "message": "Ne casse pas ton clavier si ça crash.", "author": "BlackAngel" },
+            { "message": "Minecraft, mais en plus stylé.", "author": "BlackAngel" },
+            { "message": "Si t’as faim, va manger. Le jeu t’attend.", "author": "BlackAngel" },
+            { "message": "Appuie pas partout, t'es pas en mode hack.", "author": "BlackAngel" },
+            { "message": "Pro tip : ne jamais miner sous ses pieds.", "author": "BlackAngel" },
+            { "message": "Lancer un jeu, c’est facile. Survivre à la nuit, un peu moins.", "author": "BlackAngel" },
+            { "message": "Ton launcher préféré te souhaite bonne chance.", "author": "BlackAngel" },
+            { "message": "Oui, ce bouton fait quelque chose. Essaie pour voir.", "author": "BlackAngel" },
+            { "message": "Si tu lis ça, t’es curieux. J’aime ça.", "author": "BlackAngel" },
+            { "message": "Tu savais que les creepers sont des erreurs de code ?", "author": "BlackAngel" },
+            { "message": "On a viré tous les bugs... enfin presque.", "author": "BlackAngel" },
+            { "message": "J’ai rêvé que tu gagnais au PvP. C’était beau.", "author": "BlackAngel" },
+            { "message": "Ton skin est stylé. Non, je rigole. Change-le.", "author": "BlackAngel" },
+            { "message": "T’as mis Optifine ? Sinon... tu vas souffrir.", "author": "BlackAngel" },
+            { "message": "T’inquiète, ce launcher respecte les chats.", "author": "BlackAngel" },
+            { "message": "Pourquoi t’as cliqué là ?", "author": "BlackAngel" },
+            { "message": "Chargement des blagues nulles...", "author": "BlackAngel" },
+            { "message": "C’est pas un bug, c’est une fonctionnalité.", "author": "BlackAngel" }
+];
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;
         this.splashAuthor.children[0].textContent = "@" + splash.author;
