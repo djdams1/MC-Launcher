@@ -12,83 +12,83 @@ class Home {
     async init(config) {
         this.config = config;
         this.db = new database();
-        this.news()
+        // this.news()
         this.socialLick()
         this.instancesSelect()
         document.querySelector('.settings-btn').addEventListener('click', e => changePanel('settings'))
     }
 
-    async news() {
-        let newsElement = document.querySelector('.news-list');
-        let news = await config.getNews().then(res => res).catch(err => false);
-        if (news) {
-            if (!news.length) {
-                let blockNews = document.createElement('div');
-                blockNews.classList.add('news-block');
-                blockNews.innerHTML = `
-                    <div class="news-header">
-                        <img class="server-status-icon" src="assets/images/icon.png">
-                        <div class="header-text">
-                            <div class="title">Aucun news n'ai actuellement disponible.</div>
-                        </div>
-                        <div class="date">
-                            <div class="day">1</div>
-                            <div class="month">Janvier</div>
-                        </div>
-                    </div>
-                    <div class="news-content">
-                        <div class="bbWrapper">
-                            <p>Vous pourrez suivre ici toutes les news relative au serveur.</p>
-                        </div>
-                    </div>`
-                newsElement.appendChild(blockNews);
-            } else {
-                for (let News of news) {
-                    let date = this.getdate(News.publish_date)
-                    let blockNews = document.createElement('div');
-                    blockNews.classList.add('news-block');
-                    blockNews.innerHTML = `
-                        <div class="news-header">
-                            <img class="server-status-icon" src="assets/images/icon.png">
-                            <div class="header-text">
-                                <div class="title">${News.title}</div>
-                            </div>
-                            <div class="date">
-                                <div class="day">${date.day}</div>
-                                <div class="month">${date.month}</div>
-                            </div>
-                        </div>
-                        <div class="news-content">
-                            <div class="bbWrapper">
-                                <p>${News.content.replace(/\n/g, '</br>')}</p>
-                                <p class="news-author">Auteur - <span>${News.author}</span></p>
-                            </div>
-                        </div>`
-                    newsElement.appendChild(blockNews);
-                }
-            }
-        } else {
-            let blockNews = document.createElement('div');
-            blockNews.classList.add('news-block');
-            blockNews.innerHTML = `
-                <div class="news-header">
-                        <img class="server-status-icon" src="assets/images/icon.png">
-                        <div class="header-text">
-                            <div class="title">Error.</div>
-                        </div>
-                        <div class="date">
-                            <div class="day">1</div>
-                            <div class="month">Janvier</div>
-                        </div>
-                    </div>
-                    <div class="news-content">
-                        <div class="bbWrapper">
-                            <p>Impossible de contacter le serveur des news.</br>Merci de vérifier votre configuration.</p>
-                        </div>
-                    </div>`
-            newsElement.appendChild(blockNews);
-        }
-    }
+    // async news() {
+    //     let newsElement = document.querySelector('.news-list');
+    //     let news = await config.getNews().then(res => res).catch(err => false);
+    //     if (news) {
+    //         if (!news.length) {
+    //             let blockNews = document.createElement('div');
+    //             blockNews.classList.add('news-block');
+    //             blockNews.innerHTML = `
+    //                 <div class="news-header">
+    //                     <img class="server-status-icon" src="assets/images/icon.png">
+    //                     <div class="header-text">
+    //                         <div class="title">Aucun news n'ai actuellement disponible.</div>
+    //                     </div>
+    //                     <div class="date">
+    //                         <div class="day">1</div>
+    //                         <div class="month">Janvier</div>
+    //                     </div>
+    //                 </div>
+    //                 <div class="news-content">
+    //                     <div class="bbWrapper">
+    //                         <p>Vous pourrez suivre ici toutes les news relative au serveur.</p>
+    //                     </div>
+    //                 </div>`
+    //             newsElement.appendChild(blockNews);
+    //         } else {
+    //             for (let News of news) {
+    //                 let date = this.getdate(News.publish_date)
+    //                 let blockNews = document.createElement('div');
+    //                 blockNews.classList.add('news-block');
+    //                 blockNews.innerHTML = `
+    //                     <div class="news-header">
+    //                         <img class="server-status-icon" src="assets/images/icon.png">
+    //                         <div class="header-text">
+    //                             <div class="title">${News.title}</div>
+    //                         </div>
+    //                         <div class="date">
+    //                             <div class="day">${date.day}</div>
+    //                             <div class="month">${date.month}</div>
+    //                         </div>
+    //                     </div>
+    //                     <div class="news-content">
+    //                         <div class="bbWrapper">
+    //                             <p>${News.content.replace(/\n/g, '</br>')}</p>
+    //                             <p class="news-author">Auteur - <span>${News.author}</span></p>
+    //                         </div>
+    //                     </div>`
+    //                 newsElement.appendChild(blockNews);
+    //             }
+    //         }
+    //     } else {
+    //         let blockNews = document.createElement('div');
+    //         blockNews.classList.add('news-block');
+    //         blockNews.innerHTML = `
+    //             <div class="news-header">
+    //                     <img class="server-status-icon" src="assets/images/icon.png">
+    //                     <div class="header-text">
+    //                         <div class="title">Error.</div>
+    //                     </div>
+    //                     <div class="date">
+    //                         <div class="day">1</div>
+    //                         <div class="month">Janvier</div>
+    //                     </div>
+    //                 </div>
+    //                 <div class="news-content">
+    //                     <div class="bbWrapper">
+    //                         <p>Impossible de contacter le serveur des news.</br>Merci de vérifier votre configuration.</p>
+    //                     </div>
+    //                 </div>`
+    //         newsElement.appendChild(blockNews);
+    //     }
+    // }
 
     socialLick() {
         let socials = document.querySelectorAll('.social-block')
@@ -261,7 +261,9 @@ class Home {
         });
 
         launch.on('progress', (progress, size) => {
-            infoStarting.innerHTML = `Téléchargement ${((progress / size) * 100).toFixed(0)}%`
+            infoStarting.innerHTML = `Téléchargement ${((progress / size) * 100).toFixed(0)}%, Celle peut prendre du temps`
+            
+
             ipcRenderer.send('main-window-progress', { progress, size })
             progressBar.value = progress;
             progressBar.max = size;
@@ -296,7 +298,7 @@ class Home {
             if (configClient.launcher_config.closeLauncher == 'close-launcher') {
                 ipcRenderer.send("main-window-hide")
             };
-            new logger('Minecraft', '#36b030');
+            new logger('Minecraft', '#6800bd;');
             ipcRenderer.send('main-window-progress-load')
             infoStarting.innerHTML = `Demarrage en cours...`
             console.log(e);
